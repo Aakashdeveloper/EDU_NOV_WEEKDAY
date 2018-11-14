@@ -2,6 +2,8 @@ import {  NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { BookComponent } from './book.component';
+import { ProductComponent } from './products/product.component';
 
 @NgModule({
     // All module import or create
@@ -11,7 +13,9 @@ import { AppComponent } from './app.component';
 
     // All component & pipe
     declarations: [
-        AppComponent
+        AppComponent,
+        BookComponent,
+        ProductComponent
     ],
 
     // only first component
