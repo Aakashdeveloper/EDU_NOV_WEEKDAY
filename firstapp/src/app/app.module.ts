@@ -8,6 +8,7 @@ import { ProductComponent } from './products/product.component';
 import { MyUpperPipe } from './products/myUpper.pipe';
 import { DiscountPipe } from './products/discountPrice.pipe';
 import { FilterProduct } from './products/filterProduct.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
     // All module import or create
@@ -23,7 +24,8 @@ import { FilterProduct } from './products/filterProduct.pipe';
         ProductComponent,
         MyUpperPipe,
         DiscountPipe,
-        FilterProduct
+        FilterProduct,
+        StarComponent,
     ],
 
     // only first component

@@ -3,14 +3,17 @@ import { IProduct } from './product_model';
 
 @Component({
     selector: 'app-prod',
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
+    // styles: ['thead{color:purple}', 'h3{color:olive}']
+    styleUrls: ['./product.component.css']
 })
 
 
 export class ProductComponent {
     title: String = '~~~~Product List~~~~';
     showImage: Boolean = false;
-    filterText: String = 'leaf';
+    filterText: String;
+    imageWidth: Number = 100;
     products: IProduct[] = [
             {
                 '_id': '5a05dacc734d1d68d42d31f3',
@@ -20,7 +23,7 @@ export class ProductComponent {
                 'releaseDate': 'March 19, 2016',
                 'description': 'Leaf rake with 48-inch wooden handle.',
                 'price': 19.95,
-                'starRating': 3.5,
+                'starRating': 3.0,
                 'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png'
             },
             {
@@ -42,7 +45,7 @@ export class ProductComponent {
                 'releaseDate': 'March 18, 2016',
                 'description': '15 gallon capacity rolling garden cart',
                 'price': 32.99,
-                'starRating': 4.2,
+                'starRating': 2.2,
                 'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png'
             }
     ];
@@ -56,6 +59,14 @@ export class ProductComponent {
 
 
 /*
+
+writing css in TS file
+Spearte StyleSheet
+InLine Css
+Dynamic Css(controlling from TS file)
+Conditional Css
+
+
 One Way Binding
  -- Data Binding {{}}
  -- Property Binding []

@@ -12,3 +12,14 @@ export class FilterProduct implements PipeTransform {
             (product.productName.toLowerCase().indexOf(filterBy) !== -1)) : value;
     }
 }
+
+
+
+/*
+function add(a,b){
+    retrun a+b
+}
+
+(a,b) => {retrun a+b}
+
+*/
