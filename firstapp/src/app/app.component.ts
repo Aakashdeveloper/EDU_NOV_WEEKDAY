@@ -11,9 +11,6 @@ export class AppComponent {
 }
 
 
-
-
-
 /*
 
 template: `<div>
