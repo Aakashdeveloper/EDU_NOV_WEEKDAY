@@ -1,0 +1,45 @@
+
+
+/*
+
+writing css in TS file
+Spearte StyleSheet
+InLine Css
+Dynamic Css(controlling from TS file)
+Conditional Css
+
+
+One Way Binding
+ -- Data Binding {{}}
+ -- Property Binding []
+ -- Event Binding ()
+Two Way Binding [()]
+
+
+String  ''
+Number  1
+Boolean true/false
+
+var
+let
+const
+
+
+for(i=0;i<10;i++){
+    console.log(i)
+}
+
+*ngFor
+*ngIf
+
+
+[1,2,3,4]
+["A","C"]
+
+[1,2,"ds",true,23,"dv"]
+
+
+dependency injection => when we get the instance of object from external
+source rather than creating itself
+
+*/
