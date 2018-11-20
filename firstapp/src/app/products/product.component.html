@@ -42,11 +42,15 @@
                                 *ngIf="showImage"
                                 [style.width.px]="imageWidth"/>
                         </td>
-                        <td style="color:palevioletred">{{prod.productName | myupper:'upper'}}</td>
+                        <td style="color:palevioletred">
+                            <a [routerLink]="['/products',prod.productId]">
+                                {{prod.productName | myupper:'upper'}}
+                            </a>
+                        </td>
                         <td >{{prod.productCode | myupper:'lower'}}</td>
                         <td>{{prod.releaseDate}}</td>
                         <td [ngStyle]="{'background-color':prod.price<20?'green':'orange'}">
-                            {{prod.price | discountPipe:6:8 | currency:'INR'}}
+                            {{prod.price | discountPipe:6 | currency:'INR'}}
                         </td>
                         <td>
                             <app-star [rating]="prod.starRating"
@@ -58,3 +62,8 @@
         </div>
     </div>
 </div>
+
+
+<!--
+    [queryParams]="{name:prod.productName,desc:prod.description,image:prod.imageUrl}"
+-->

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/Router';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book.component';
@@ -12,6 +13,11 @@ import { DiscountPipe } from './products/discountPrice.pipe';
 import { FilterProduct } from './products/filterProduct.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductService } from './products/product.service';
+import { NotFoundComponent } from './shared/notFouns.component';
+import { OrderComponent } from './orders/order.component';
+import { MoviesComponent } from './movies/movies.component';
+import { HomeComponent } from './home/home.component';
+import { ProductDetailComponent } from './products/productDetail.component';
 
 @NgModule({
     // All module import or create
@@ -19,7 +25,17 @@ import { ProductService } from './products/product.service';
         BrowserModule,
         FormsModule,
         HttpModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule.forRoot([
+            {path: 'products', component: ProductComponent},
+            {path: 'products/:id', component: ProductDetailComponent},
+            {path: 'orders', component: OrderComponent},
+            {path: 'home', component: HomeComponent},
+            {path: 'movies', component: MoviesComponent},
+            {path: '', redirectTo: 'home', pathMatch: 'full'},
+            {path: '**', component: NotFoundComponent}
+        ])
+
     ],
 
     // All component & pipe
@@ -31,6 +47,11 @@ import { ProductService } from './products/product.service';
         DiscountPipe,
         FilterProduct,
         StarComponent,
+        NotFoundComponent,
+        OrderComponent,
+        MoviesComponent,
+        HomeComponent,
+        ProductDetailComponent
     ],
 
     // only first component
