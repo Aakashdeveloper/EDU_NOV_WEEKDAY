@@ -1,8 +1,41 @@
-<div class="panel panel-success">
-    <div class="panel-heading">
-        Movies Page
-    </div>
-    <div class="panel-body">
-        Movies Content
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="row col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading" align="left">
+            <b>{{title}}</b>
+        </div>
+        <div class="panel-body">
+            <div class="panel-responsive">
+                <div class="column">
+                    <div>
+                        <div style="background-color:white" *ngFor="let movie of movies" (click)="onSelect(movie)">
+                            <ul class="w3-ul w3-card-4">
+                                <li class="w3-bar">
+                                    <img [src]="movie.imageUrl" class="w3-bar-item w3-circle w3-hide-small" style="width:85px"/>
+                                    <div class="w3-bar-item">
+                                        <span class="w3-large">{{movie.name}}</span>
+                                        <br/>
+                                        <span class="w3-large">{{movie.language}}</span>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div *ngIf="selectMovies">
+                        <img [src]="selectMovies.imageUrl"  style="width:500px;height:350px"/>
+                        <hr>
+                        <div >{{selectMovies.name}}</div>
+                        <div >{{selectMovies.rate}}</div>
+                        <div >{{selectMovies.language}}</div>
+                        <div >{{selectMovies.type}}</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

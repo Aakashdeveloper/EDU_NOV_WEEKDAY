@@ -18,6 +18,8 @@ import { OrderComponent } from './orders/order.component';
 import { MoviesComponent } from './movies/movies.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './products/productDetail.component';
+import { MoviesService } from './movies/movies.services';
+import { RouterGaurds } from './products/router.gaurd';
 
 @NgModule({
     // All module import or create
@@ -28,7 +30,7 @@ import { ProductDetailComponent } from './products/productDetail.component';
         HttpClientModule,
         RouterModule.forRoot([
             {path: 'products', component: ProductComponent},
-            {path: 'products/:id', component: ProductDetailComponent},
+            {path: 'products/:id', canActivate: [RouterGaurds], component: ProductDetailComponent},
             {path: 'orders', component: OrderComponent},
             {path: 'home', component: HomeComponent},
             {path: 'movies', component: MoviesComponent},
@@ -61,7 +63,9 @@ import { ProductDetailComponent } from './products/productDetail.component';
 
     // All services
     providers: [
-        ProductService
+        ProductService,
+        MoviesService,
+        RouterGaurds
     ]
 })
 
