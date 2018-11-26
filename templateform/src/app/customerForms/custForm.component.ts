@@ -12,15 +12,17 @@ export class CustFormComponent {
     languages: any[] = ['AngularJs', 'NodeJs', 'ReactJs', 'GOLang'];
     model = new Employee('John' , 'andrew' , 'a@a.com', '12345678' , true, 'male', 'AngularJs');
     hasCodeLangError: Boolean = false;
+    data: any[];
     formdata: Employee;
 
     constructor(private _FormPosterService: FormPosterService) {}
+
     firstToUpper(value: string): void {
-        if (value.length > 0) {
-            this.model.firstName = value.charAt(0).toUpperCase() + value.slice(1);
-        } else {
-            this.model.firstName = value;
-        }
+            if (value.length > 0) {
+                this.model.firstName = value.charAt(0).toUpperCase() + value.slice(1);
+            } else {
+                this.model.firstName = value;
+            }
     }
 
 
